@@ -1,6 +1,11 @@
-# Python byte-code
+# Python caching and compiled bytecode
 __pycache__/
-*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
 
 # Virtual environment
 .venv/
