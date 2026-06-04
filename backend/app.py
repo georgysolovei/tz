@@ -9,7 +9,7 @@ class MyHandler(BaseHTTPRequestHandler):
             self.end_headers()
             
             # Response text encoded in UTF-8
-            response_text = "Hello from Effective Mobile!"
+            response_text = "Hello from Effective Mobile!\n"
             self.wfile.write(response_text.encode('utf-8'))
         else:
             # return 404 error for all other paths
@@ -18,7 +18,7 @@ class MyHandler(BaseHTTPRequestHandler):
 def run():
     server_address = ('0.0.0.0', 8080)
     httpd = HTTPServer(server_address, MyHandler)
-    print("Server running at http://localhost")
+    print("Server running at http://localhost:80")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
