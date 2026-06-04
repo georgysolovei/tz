@@ -1,9 +1,8 @@
-version: '3.8'
-
 services:
   backend:
     build: ./backend
     container_name: tz-backend
+    image: tz-backend:v1.0
     networks:
       - tz-network
     expose:
@@ -13,7 +12,10 @@ services:
     image: nginx:1.30.2-alpine
     container_name: tz-nginx
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      # Separate config file according to assignment
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/tz.conf:ro
+      # Suppress default config
+      - /dev/null:/etc/nginx/conf.d/default.conf:ro
     networks:
       - tz-network
     ports:
