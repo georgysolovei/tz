@@ -37,6 +37,6 @@ Hello from Effective Mobile!
 
 Docker Compose initializes two dedicated services isolated inside a custom network (`tz-network`):
 
-* **tz-backend**: A lightweight Python application compiled using a secure `python:3.12-slim` image. It listens internally on port `8080` to return the success string. The container is completely hidden from the local network and does not export any public ports.
+* **tz-backend**: A lightweight Python application compiled using a secure `python:3.12-alpine` image. It listens internally on port `8080` to return the success string. The container is completely hidden from the local network and does not export any public ports.
 * **tz-nginx**: A high-performance reverse proxy server using a stable Alpine footprint (`nginx:1.26-alpine`). It binds strictly to the host's `localhost:80` interface to intercept incoming traffic and securely proxy requests down to the hidden backend container.
 
