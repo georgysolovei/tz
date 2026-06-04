@@ -16,9 +16,9 @@ class MyHandler(BaseHTTPRequestHandler):
             self.send_error(404, "Page Not Found")
 
 def run():
-    server_address = ('', 8080)
+    server_address = ('0.0.0.0', 8080)
     httpd = HTTPServer(server_address, MyHandler)
-    print("Server running at http://localhost:8080")
+    print("Server running at http://localhost")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
